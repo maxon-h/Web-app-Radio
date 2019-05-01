@@ -75,6 +75,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 .cancle{
     height: 29px;
@@ -102,6 +103,7 @@
 }
 .slider{
     margin-top: 10px;
+    -webkit-tap-highlight-color: transparent;
 }
 .add{
     height: 29px;
@@ -361,5 +363,8 @@
     #searchForm{
         width: 310px;
         margin-left: 5px;
+    }
+    .alignAdd{
+        margin-top: 20px;
     }
 }
