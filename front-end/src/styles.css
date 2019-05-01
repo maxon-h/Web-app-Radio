@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "reset.css";
+@font-face {
+    font-family: notoSans;
+    src: url('../src/Noto_Sans/NotoSans-Regular.ttf');
+}
+*{
+    font-family: notoSans, sans-serif;
+}

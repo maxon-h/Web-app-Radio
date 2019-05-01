@@ -1,0 +1,47 @@
+<audio></audio>
+
+
+<div id="alignMain">
+    <div id="player">
+        <p style="text-align:center;margin-bottom:5px;">{{currStation}}</p>
+        <div class="buttonCover">
+            <button type="button" class="playAudioButton prevButton" (click)="prevStation()"></button>
+            <button type="button" id="playButton" class="audioPlay playAudioButton" (click)="playMusic()"></button>
+            <button type="button" class="playAudioButton nextButton" (click)="nextStation()"></button>
+        </div>
+        <input type="range" min="0" max="100" value="70" class="slider" (input)="adjustVolume($event)">
+    </div>
+    
+    <div class="allStations">
+        <div id="alignInputFavorite">
+            <input type="text" id="searchForm" placeholder="Search station by name" autocomplete="off" [(ngModel)]="search" (keyup)="onKey($event)">
+            <button class="add" type="button" (click)="showFavStations()" *ngIf="favStation === '' ">Show Favorite</button>
+            <button class="cancle" *ngIf="favStation !== '' " (click)="showAllStations()">Show all</button>
+        </div>
+        <div class="alignItems">
+            <div *ngFor="let item of stations | search:searchText | favoriteStation: favStation;let i = index" class="rowAndButtons">
+                <a class="stationRow" (click)="playStation(i)">
+                    <div class="urlName">{{item.name}}</div>
+                    <div class="urlRow">{{item.url}}</div>
+                </a>
+                <input type="checkbox" class="checkbox" [checked]="item.favorite" (change)='addFav($event,i)' *ngIf="favStation === '' ">
+                <button type="button" class="updateButton" (click)="showOptionMenu(i)"></button>
+                <button type="button" class="delButton" (click)="deleteStation(i)"></button>
+            </div>
+        </div>
+        <button type="button" class="add alignAdd" (click)="showInputBlock()" *ngIf="!wantedToAdd && !showMenu">Add station</button>
+        <div class="inputBlock" *ngIf="wantedToAdd || showMenu">
+            <div class="addStation">
+                <input type="text" class="inputField" style="width: 130px" [(ngModel)]="name" placeholder="name">
+                <input type="text" class="inputField" [(ngModel)]="url" placeholder="url">
+                <label for="Favorite" style="margin-top:7px" *ngIf="!showMenu || favStation === '' ">Favorite:</label>
+                <input type="checkbox" class="checkbox" style="margin-top:10px" [(ngModel)]="fav" name="Favorite" *ngIf="!showMenu || favStation === ''">
+            </div>
+            <div class="addStation">
+                <button class="cancle" (click)="cancleInput()">Cancel</button>
+                <button class="add" (click)="setValue()" [disabled]="url === '' && name ==='' " *ngIf="!showMenu">Add station</button>
+                <button class="add editButton" (click)="editStation()" [disabled]="url === '' && name ==='' " *ngIf="showMenu">Edit station</button>
+            </div>
+        </div>
+    </div>
+</div>

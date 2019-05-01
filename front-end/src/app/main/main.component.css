@@ -1,0 +1,289 @@
+.playAudioButton{
+    height: 53px;
+    width: 53px;
+    background-size: 30px 30px !important;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.playAudioButton:focus{
+    outline: none;
+}
+.playAudioButton:hover{
+    background-color: #e5e5e5;
+}
+.playAudioButton:active{
+    height: 45px;
+    width: 45px;
+    background-size: 25px 25px !important;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+.buttonCover{
+    height: 53px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#player{
+    height: 80px;
+    width: 240px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: -90px;
+}
+.audioPlay {
+    background: url('../../assets/img/play-button.png') no-repeat 14px center;
+}
+.audioStop {
+    background: url('../../assets/img/pause-button.png') no-repeat 11.5px center;
+}
+.nextButton{
+    background: url('../../assets/img/next-button.png') no-repeat 13px center;
+}
+.prevButton{
+    background: url('../../assets/img/previous-button.png') no-repeat 10px center;
+}
+.inputField{
+    height: 25px;
+    width: 300px;
+    border-radius: 3px;
+    border-color: #edeff1;
+    border-style: solid;
+    border-width: 1px;
+    background-color: rgb(248, 248, 248);
+    padding-left: 15px;
+    vertical-align: center;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.inputField:focus, .inputField:hover{
+    border: 1px solid rgb(211,211,211);
+    outline: none;
+    background-color: white;
+}
+.checkbox{
+    margin-top: 13px;
+}
+.addStation{
+    width: 580px;
+    height: 38px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.cancle{
+    height: 29px;
+    width: 110px;
+    border-radius: 3px;
+    color: #0079d3;
+    border: 1px solid #0079d3;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+.cancle:focus{
+    outline: none;
+}
+.cancle:hover{
+    color: #258dd9;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #258dd9;
+}
+.cancle:active {
+    color: #0079d3;
+    outline: none;
+    border: 1px solid #0074d2;
+}
+.slider{
+    margin-top: 10px;
+}
+.add{
+    height: 29px;
+    width: 110px;
+    border-radius: 3px;
+    color: white;
+    background-color: #0079d3;
+    border: 1px solid #0079d3;
+    font-weight: bold;
+}
+.add:focus{
+    outline: none;
+}
+.add:hover{
+    color: white;
+    cursor: pointer;
+    outline: none;
+    background-color: #258dd9;
+    border: 1px solid #258dd9;
+}
+.add:active{
+    color: white;
+    background-color: #0060a7;
+    outline: none;
+    border-width: 1px;
+    border-color: #0060a7;
+    border-style: solid;
+}
+.allStations{
+    width: 580px;
+    height: 320px;
+}
+.alignAdd{
+    margin-top: 10px;
+    float: right;
+}
+.stationRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(209, 209, 209);
+    margin-bottom: 7px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 35px;
+    cursor: pointer;
+}
+.stationRow:hover{
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(168, 168, 168);
+}
+.stationRow:active{
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(129, 129, 129);
+}
+.urlRow{
+    width: 330px;
+    height: 35px;
+    overflow-x: scroll;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.urlName{
+    height: 35px;
+    width: 120px;
+    /* overflow-x: scroll; */
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+#alignMain{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.alignItems{
+    width: 580px;
+    max-height: 230px;
+    text-align: center;
+    overflow-y: scroll;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+.inputBlock{
+    margin-top: 10px;
+}
+.rowAndButtons{
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    margin-bottom: 7px;
+    margin-top: 3px;
+}
+.delButton{
+    height: 35px;
+    width: 25px;
+    background: url('../../assets/img/delete.png') no-repeat center center;
+    border: none;
+    cursor: pointer;
+    background-size: 20px !important;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.delButton:hover{
+    background-color: #ffb0b0;
+}
+.delButton:active{
+    outline: none;
+    background-color: #ff7a7a;
+}
+.delButton:focus{
+    outline: none;
+}
+.updateButton{
+    height: 35px;
+    width: 25px;
+    background: url('../../assets/img/options.png') no-repeat center center;
+    border: none;
+    cursor: pointer;
+    background-size: 20px !important;
+    border-radius: 10px;
+}
+.updateButton:hover{
+    background-color: #f1ffb0;
+}
+.updateButton:active{
+    outline: none;
+    background-color: #fffc62;
+}
+.updateButton:focus{
+    outline: none;
+}
+.editButton{
+    background-color: #ffe342;
+    border: 1px solid #ffe342;
+    color: black;
+}
+.editButton:hover{
+    background-color: #ffe96c;
+    border: 1px solid #ffe96c;
+    color: black;
+}
+.editButton:active{
+    background-color: #ffdf2b;
+    border: 1px solid #ffdf2b;
+    color: black;
+}
+#searchForm{
+    height: 28px;
+    width: 400px;
+    border-radius: 3px;
+    border: 1px solid #edeff1;;
+    background-color: #f6f7f9;
+    padding-left: 25px;
+    vertical-align: center;
+    font-size: 15px;
+    margin-right: 10px;
+}
+#searchForm:focus, #searchForm:hover{
+    box-shadow: 0 0 0pt 1pt #0074d2;
+    outline: none;
+    background-color: white;
+}
+#showFav{
+    height: 28px;
+    width: 110px;
+    border-radius: 3px;
+    color: white;
+    background-color: #0079d3;
+    border: 1px solid #0079d3;
+    font-weight: bold;
+}
+#showAll{
+
+}
+#alignInputFavorite{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
