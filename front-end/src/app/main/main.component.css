@@ -290,12 +290,9 @@
 } 
 @media (max-width: 600px) { 
     #alignMain{
-        flex-direction: column;
-        justify-content: center;    
         width: 99%;
     }
     #player{
-       margin-bottom: 50px;
        margin-right: 0px;
     }
     .urlRow{
@@ -303,13 +300,6 @@
     }
     .urlName{
         width: 300px;
-    }
-    .rowAndButtons{
-        display: flex;
-        justify-content: space-between;
-        height: 35px;
-        margin-bottom: 7px;
-        margin-top: 3px;
     }
     .alignItems{
         border: none;
