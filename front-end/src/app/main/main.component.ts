@@ -67,15 +67,20 @@ export class MainComponent implements OnInit {
   public showOptionMenu(i: number): void {
     this.showMenu = true;
     this.updatedIndex = i;
-    if(this.favStation === 'true'){
-      let tempStations = this.stations.filter(item => item.favorite === true);
-      let indxId = tempStations[i]._id;
-      this.updatedIndex = this.stations.map(item => item._id).indexOf(indxId);
-    }
     if(this.searchText){
       let tempStationId = this.searchPipe.transform(this.stations,this.searchText)[i]._id
       this.updatedIndex = this.stations.map(item => item._id).indexOf(tempStationId);
     }
+    if(this.favStation === 'true'){
+      let tempStations = this.stations.filter(item => item.favorite === true);
+      let indxId = tempStations[i]._id;
+      this.updatedIndex = this.stations.map(item => item._id).indexOf(indxId);
+      if(this.searchText){
+        let tempStationId = this.searchPipe.transform(tempStations,this.searchText)[i]._id
+        this.updatedIndex = this.stations.map(item => item._id).indexOf(tempStationId);
+      }
+    }
+    
     this.url = this.stations[this.updatedIndex].url;
     this.name = this.stations[this.updatedIndex].name;
     this.fav = this.stations[this.updatedIndex].favorite;
@@ -83,13 +88,9 @@ export class MainComponent implements OnInit {
 
   public addFav(event: any,i:number){
     let updStation = this.stations[i];
-
-    if(this.favStation === 'true'){
-      let tempStations = this.stations.filter(item => item.favorite === true);
-      let indx = this.stations.map(item => item._id).indexOf(tempStations[i]._id);
-      updStation = this.stations[indx];
+    if(this.searchText){
+      updStation = this.searchPipe.transform(this.stations,this.searchText)[i];
     }
-
     updStation.favorite = event.target.checked;
 
     this.dataService.updateStation(updStation).subscribe(()=>{
@@ -99,12 +100,15 @@ export class MainComponent implements OnInit {
 
   public deleteStation(i: number): void {
     let delId = this.stations[i]._id;
+    if(this.searchText){
+      delId = this.searchPipe.transform(this.stations,this.searchText)[i]._id
+    }
     if(this.favStation === 'true'){
       let tempStations = this.stations.filter(item => item.favorite === true);
       delId = tempStations[i]._id;
-    }
-    if(this.searchText){
-      delId = this.searchPipe.transform(this.stations,this.searchText)[i]._id
+      if(this.searchText){
+        delId = this.searchPipe.transform(tempStations,this.searchText)[i]._id
+      }
     }
     
     if(i === this.currIndx){
@@ -131,16 +135,18 @@ export class MainComponent implements OnInit {
   }
   public playStation(i: number): void {
     this.currIndx = i;
-    
+    if(this.searchText){
+      let tempStationId = this.searchPipe.transform(this.stations,this.searchText)[i]._id
+      this.currIndx = this.stations.map(item => item._id).indexOf(tempStationId);
+    }
     if(this.favStation === 'true'){
       let tempStations = this.stations.filter(item => item.favorite === true);
       let indxId = tempStations[i]._id;
       this.currIndx = this.stations.map(item => item._id).indexOf(indxId);
-    }
-    
-    if(this.searchText){
-      let tempStationId = this.searchPipe.transform(this.stations,this.searchText)[i]._id
-      this.currIndx = this.stations.map(item => item._id).indexOf(tempStationId);
+      if(this.searchText){
+        let tempStationId = this.searchPipe.transform(tempStations,this.searchText)[i]._id
+        this.currIndx = this.stations.map(item => item._id).indexOf(tempStationId);
+      }
     }
 
     document.getElementsByTagName('audio')[0].src = this.stations[this.currIndx].url;
