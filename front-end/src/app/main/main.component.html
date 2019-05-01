@@ -31,11 +31,13 @@
         </div>
         <button type="button" class="add alignAdd" (click)="showInputBlock()" *ngIf="!wantedToAdd && !showMenu">Add station</button>
         <div class="inputBlock" *ngIf="wantedToAdd || showMenu">
-            <div class="addStation">
-                <input type="text" class="inputField" style="width: 130px" [(ngModel)]="name" placeholder="name">
+            <div class="addStation changedView">
+                <input type="text" class="little inputField"[(ngModel)]="name" placeholder="name">
                 <input type="text" class="inputField" [(ngModel)]="url" placeholder="url">
-                <label for="Favorite" style="margin-top:7px" *ngIf="!showMenu || favStation === '' ">Favorite:</label>
+                <div>
+                    <label for="Favorite" style="margin-top:7px" *ngIf="!showMenu || favStation === '' ">Favorite:</label>
                 <input type="checkbox" class="checkbox" style="margin-top:10px" [(ngModel)]="fav" name="Favorite" *ngIf="!showMenu || favStation === ''">
+                </div>      
             </div>
             <div class="addStation">
                 <button class="cancle" (click)="cancleInput()">Cancel</button>

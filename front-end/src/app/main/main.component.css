@@ -35,6 +35,7 @@
     justify-content: space-around;
     flex-direction: column;
     margin-top: -90px;
+    margin-right: 20px;
 }
 .audioPlay {
     background: url('../../assets/img/play-button.png') no-repeat 14px center;
@@ -80,6 +81,7 @@
     height: 29px;
     width: 110px;
     border-radius: 3px;
+    background-color: white;
     color: #0079d3;
     border: 1px solid #0079d3;
     font-weight: bold;
@@ -270,20 +272,95 @@
     outline: none;
     background-color: white;
 }
-#showFav{
-    height: 28px;
-    width: 110px;
-    border-radius: 3px;
-    color: white;
-    background-color: #0079d3;
-    border: 1px solid #0079d3;
-    font-weight: bold;
-}
-#showAll{
-
-}
 #alignInputFavorite{
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
+.little{
+    width: 130px;
+}
+@media (max-width: 900px) { 
+    #alignMain{
+        flex-direction: column;
+        justify-content: center;    
+    }
+    #player{
+       margin-bottom: 50px;
+    }
+} 
+@media (max-width: 600px) { 
+    #alignMain{
+        flex-direction: column;
+        justify-content: center;    
+        width: 99%;
+    }
+    #player{
+       margin-bottom: 50px;
+    }
+    .urlRow{
+        display: none;
+    }
+    .urlName{
+        width: 300px;
+    }
+    .stationRow{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .rowAndButtons{
+        display: flex;
+        justify-content: space-between;
+        height: 35px;
+        margin-bottom: 7px;
+        margin-top: 3px;
+    }
+    .alignItems{
+        border: none;
+        width: 450px;
+    }
+    .checkbox, .updateButton, .delButton{
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .addStation{
+        max-width: 100%;
+        height: 38px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    #alignInputFavorite{
+        flex-direction: column;
+    }
+    #searchForm{
+        margin-bottom: 10px;
+        max-width: 550px;
+    }
+    .alignAdd{
+        float: none;
+        transform: translate(-50%,-50%);
+        margin-left: 50%;
+    }
+    #player{
+        margin-right: 0px;
+    }
+    .addStation{
+        flex-direction: row;
+    justify-content: center;
+    /* height: 121px; */
+    align-items: center;
+    }
+    .allStations{
+        width: 450px;
+    }
+    .changedView{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 118px;
+    }
+    .inputField{
+        width: 90%;
+    }
+} 
