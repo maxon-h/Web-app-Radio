@@ -35,7 +35,7 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (error, client) => {
     collection = database.collection('stations');
     console.log("Connected to `" + 'data' + "`!");
     app.listen(port, function(){
-        console.log("Сервер ожидает подключения...");
+        console.log('Server waitin to connect');
     });
 });
 
@@ -46,16 +46,6 @@ app.get('/stations', function(req,res){
         }
         res.json(stations);
     });
-})
-
-app.get('/stations/:id', function(req,res){
-    let id = req.params.id;
-    collection.findOne({_id: ObjectID(id)}, (err,station) => {
-        if(err) {
-            return response.status(500).send(err);
-        }
-        res.json(station);
-    })
 })
 
 app.put('/stations/put/:id', function (req, res) {
